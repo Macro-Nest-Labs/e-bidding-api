@@ -1,0 +1,92 @@
+{
+  "name": "e-bidding-be",
+  "version": "1.0.0",
+  "description": "business logic for e-bidding module",
+  "main": "app.ts",
+  "module": "esnext",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dist/app.js",
+    "build": "webpack --mode production",
+    "build:watch": "node_modules/.bin/tsc --watch",
+    "heroku-postbuild": "bash postbuild.bash && npm run build",
+    "run:watch": "node_modules/.bin/nodemon ./dist/app.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "dev": "NODE_ENV=local concurrently \"node_modules/.bin/webpack --watch\" \"node_modules/.bin/nodemon dist/app.js\"",
+    "dev-win": "concurrently \".\\node_modules\\.bin\\webpack  --watch\" \".\\node_modules\\.bin\\nodemon dist\\app.js\"",
+    "prepare": "husky install"
+  },
+  "author": "AtharvaCM",
+  "license": "ISC",
+  "dependencies": {
+    "adler32-js": "^1.0.2",
+    "bcrypt": "^5.1.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.2",
+    "bull": "^4.11.5",
+    "cognito-express": "^3.0.3",
+    "consola": "^3.2.3",
+    "cors": "^2.8.5",
+    "crc-32": "^1.2.2",
+    "crypto-js": "^4.2.0",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fnv1a": "^1.1.1",
+    "handlebars": "^4.7.8",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.1.0",
+    "mongoose": "^8.0.2",
+    "nodemailer": "^6.9.7",
+    "nodemailer-express-handlebars": "^6.1.0",
+    "puppeteer": "^21.6.1",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.23.0",
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@commitlint/types": "^18.4.4",
+    "@types/babel__core": "^7.20.2",
+    "@types/babel__preset-env": "^7.9.3",
+    "@types/express": "^4.17.18",
+    "@types/jsonwebtoken": "^9.0.3",
+    "@types/node": "^20.8.3",
+    "@types/nodemailer": "^6.4.14",
+    "@types/nodemailer-express-handlebars": "^4.0.5",
+    "@types/pdfkit": "^0.13.3",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "concurrently": "^8.2.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
+}

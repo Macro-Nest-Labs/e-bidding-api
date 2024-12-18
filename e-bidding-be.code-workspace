@@ -1,0 +1,59 @@
+{
+  "extensions": {
+    "recommendations": [
+      "steoates.autoimport",
+      "formulahendry.auto-rename-tag",
+      "dzannotti.vscode-babel-coloring",
+      "hookyqr.beautify",
+      "coenraads.bracket-pair-colorizer-2",
+      "naumovs.color-highlight",
+      "msjsdiag.debugger-for-chrome",
+      "mikestead.dotenv",
+      "dsznajder.es7-react-js-snippets",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "kumar-harsh.graphql-for-vscode",
+      "xabikos.javascriptsnippets",
+      "ms-vsliveshare.vsliveshare",
+      "davidanson.vscode-markdownlint",
+      "christian-kohler.npm-intellisense",
+      "christian-kohler.path-intellisense",
+      "esbenp.prettier-vscode",
+      "formulahendry.terminal",
+      "wayou.vscode-todo-highlight",
+      "gamunu.vscode-yarn"
+    ]
+  },
+  "settings": {
+    "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 2, // Based on Prettier config (https://github.com/prettier/prettier-vscode)
+    "search.useIgnoreFiles": false,
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact",
+      "vue-html": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "files.associations": {
+      "*.js": "javascriptreact",
+      "*.jsx": "javascriptreact"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "prompt",
+
+    "[markdown]": {
+      "files.trimTrailingWhitespace": false,
+      "editor.formatOnSave": false
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.configPath": "",
+    "prettier.prettierPath": ""
+  },
+  "folders": [
+    {
+      "path": "."
+    }
+  ]
+}

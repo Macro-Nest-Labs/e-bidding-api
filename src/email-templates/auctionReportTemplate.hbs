@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Auction Report</title>
+    <style>
+      body { font-family: Arial, sans-serif; } .header { text-align: center; }
+      .header h1 { color: #003366; } table { width: 100%; border-collapse:
+      collapse; } th, td { border: 1px solid #ddd; padding: 8px; text-align:
+      left; } th { background-color: #4CAF50; color: white; } .lot-items {
+      margin-top: 20px; } .lot-items th { background-color: #f2f2f2; }
+      .lot-items td { background-color: #fafafa; } .footer { text-align: center;
+      margin-top: 40px; }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Auction Report</h1>
+      <p><strong>Auction Name:</strong> {{auctionName}}</p>
+    </div>
+
+    <div class="suppliers">
+      <h2>Suppliers Invited</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Supplier Name</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each suppliers}}
+            <tr>
+              <td>{{this.name}}</td>
+              <td>{{this.status}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    {{#each lots}}
+      <div class="lot">
+        <h2>Lot: {{this.id}}</h2>
+        <table class="lot-items">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Unit of Measure</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each this.items}}
+              <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.qty}}</td>
+                <td>{{this.uom}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <h3>All Bids:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Amount</th>
+              <th>Bidder</th>
+              <th>Created At</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each this.bids}}
+              <tr>
+                <td>{{this.amount}}</td>
+                <td>{{this.bidder}}</td>
+                <td>{{this.createdAt}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <p>Lowest Bid:
+          {{this.lowestBid.amount}}
+          by
+          {{this.lowestBid.bidder}}</p>
+      </div>
+    {{/each}}
+
+    <div class="footer">
+      <p>End of Auction Report</p>
+    </div>
+  </body>
+</html>

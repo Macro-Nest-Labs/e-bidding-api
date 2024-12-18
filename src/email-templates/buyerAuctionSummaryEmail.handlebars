@@ -1,0 +1,61 @@
+<body
+  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #eef1f5; color: #333; margin: 0; padding: 0;"
+>
+  <div>
+    <div
+      style="max-width: 600px; margin: 40px auto; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden;"
+    >
+      <div
+        style="background-color: #007bff; color: white; padding: 20px; text-align: center;"
+      >
+        <h1 style="margin: 0; font-size: 24px;">Auction Summary</h1>
+      </div>
+      <div style="padding: 20px; text-align: center;">
+        <p>Dear {{buyerName}},</p>
+        <p>Thank you for participating in
+          {{auctionName}}
+          auction. Here is the summary of the auction results:</p>
+
+        {{#each auctionSummary.lots}}
+          <h3>Lot ID: {{this.lotId}}</h3>
+          <table
+            style="width: 100%; border-collapse: collapse; margin: 20px 0;"
+          >
+            <tr>
+              <th
+                style="border: 1px solid #ddd; padding: 10px; text-align: left; background-color: #28a745; color: white;"
+              >Product</th>
+              <th
+                style="border: 1px solid #ddd; padding: 10px; text-align: left; background-color: #28a745; color: white;"
+              >Quantity</th>
+              <th
+                style="border: 1px solid #ddd; padding: 10px; text-align: left; background-color: #28a745; color: white;"
+              >Unit of Measure</th>
+            </tr>
+            {{#each this.lotItems}}
+              <tr>
+                <td
+                  style="border: 1px solid #ddd; padding: 10px; text-align: left;"
+                >{{this.productName}}</td>
+                <td
+                  style="border: 1px solid #ddd; padding: 10px; text-align: left;"
+                >{{this.qty}}</td>
+                <td
+                  style="border: 1px solid #ddd; padding: 10px; text-align: left;"
+                >{{this.uom}}</td>
+              </tr>
+            {{/each}}
+          </table>
+          <p>Lowest Bid: {{this.winningBid}}</p>
+          <p>Supplier with lowest bid: {{this.winningSupplier}}</p>
+          <hr />
+        {{/each}}
+
+        <p>If you have any questions or need further information, please do not
+          hesitate to contact us.</p>
+        <p>Best regards,</p>
+        <p>Your Auction Team</p>
+      </div>
+    </div>
+  </div>
+</body>

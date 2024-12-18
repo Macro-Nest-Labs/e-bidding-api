@@ -1,0 +1,95 @@
+<body
+  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #eef1f5; color: #333; margin: 0; padding: 0;"
+>
+  <div>
+    <div
+      style="max-width: 600px; margin: 40px auto; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden;"
+    >
+      <div
+        style="background-color: #ff5722; color: white; padding: 20px; text-align: center;"
+      >
+        <h1 style="margin: 0; font-size: 24px;">Invitation to Bid</h1>
+      </div>
+      <div style="padding: 20px; text-align: center;">
+        <p>Dear {{supplier_name}},</p>
+        <p>
+          We are thrilled to invite you to participate in our upcoming bidding
+          event. Your reputation for excellence precedes you, and we are excited
+          at the prospect of your participation.
+        </p>
+        <p>Event details are as follows:</p>
+        <ul>
+          <li><strong>Name of Auction:</strong> {{auctionName}}</li>
+          <li><strong>Start Date:</strong> {{startDate}}</li>
+          <li><strong>Start Time:</strong> {{startTime}}</li>
+          <li><strong>Duration:</strong> {{duration}}</li>
+        </ul>
+
+        <p>Here's a snapshot of what's up for grabs:</p>
+        {{#each lots}}
+          <table
+            style="width: 100%; border-collapse: collapse; margin: 20px 0;"
+          >
+            <tr>
+              <th
+                style="border: 1px solid #ddd; padding: 10px; text-align: left; background-color: #4caf50; color: white;"
+              >Product</th>
+              <th
+                style="border: 1px solid #ddd; padding: 10px; text-align: left; background-color: #4caf50; color: white;"
+              >Quantity</th>
+              <th
+                style="border: 1px solid #ddd; padding: 10px; text-align: left; background-color: #4caf50; color: white;"
+              >Unit of Measure</th>
+            </tr>
+            {{#each this.lotItemsFormatted}}
+              <tr>
+                <td
+                  style="border: 1px solid #ddd; padding: 10px; text-align: left;"
+                >{{this.productName}}</td>
+                <td
+                  style="border: 1px solid #ddd; padding: 10px; text-align: left;"
+                >{{this.qty}}</td>
+                <td
+                  style="border: 1px solid #ddd; padding: 10px; text-align: left;"
+                >{{this.uom}}</td>
+              </tr>
+            {{/each}}
+          </table>
+          <hr />
+        {{/each}}
+
+        <p style="line-height: 1.6;"><strong>Terms and Conditions:</strong></p>
+        <ul style="text-align: left; padding-left: 30px; padding-right: 30px;">
+          <li><strong>Price Basis:</strong> Fixed Price</li>
+          <li><strong>Taxes And Duties:</strong>
+            All applicable taxes and duties are included in the price.</li>
+          <li><strong>Delivery:</strong>
+            Delivery will be made within 7 days of the order confirmation.</li>
+          <li><strong>Payment Terms:</strong>
+            Payment is due within 30 days of the invoice date.</li>
+          <li><strong>Warranty Guarantee:</strong>
+            A 1-year warranty is provided for all products.</li>
+          <li><strong>Inspection Required:</strong> Yes</li>
+          <li><strong>Other Terms:</strong>
+            Any additional terms and conditions will be specified in the
+            contract.</li>
+          <li><strong>Awarding Decision:</strong> Lowest Price</li>
+        </ul>
+
+        <a
+          href="{{acceptUrl}}"
+          style="background-color: #4caf50; color: white; text-decoration: none; padding: 12px 30px; margin: 20px 0; border-radius: 20px; display: inline-block; transition: background-color 0.3s;"
+        >Accept invite</a>
+        <p>Should you have any questions, feel free to reach out:</p>
+        <p>Email: {{buyerContactEmail}}, Contact No: {{buyerContactNumber}}</p>
+        <p>Excited to have you on board!</p>
+        <p>Best regards,</p>
+        <p>{{buyerName}}</p>
+        <a
+          href="https://e-bidding-fe.vercel.app/"
+          style="background-color: #4caf50; color: white; text-decoration: none; padding: 12px 30px; margin: 20px 0; border-radius: 20px; display: inline-block; transition: background-color 0.3s;"
+        >Visit ARG Supply Tech Auction Module</a>
+      </div>
+    </div>
+  </div>
+</body>

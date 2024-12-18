@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "./dist",
+    "allowJs": true,
+    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "src/@types"],
+    "esModuleInterop": true
+  },
+  "compileOnSave": true,
+  "include": ["./src/**/*", "./test/**/*"],
+  "exclude": ["node_modules", "lib", "dist"]
+}
